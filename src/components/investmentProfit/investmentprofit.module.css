@@ -1,0 +1,20 @@
+.div{
+    display: flex;
+}
+
+.div h5{
+    padding: 0 5px;
+}
+
+.div p{
+    font-size: x-small;
+    margin: 3px 0;
+}
+
+.lesser{
+    color: red;
+}
+
+.greater{
+    color: green
+}

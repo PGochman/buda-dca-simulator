@@ -1,0 +1,26 @@
+.table{
+    box-sizing: border-box;
+}
+
+.table th{
+    width: 10%;
+}
+
+.lesser{
+    color: red;
+}
+
+.greater{
+    color: green
+}
+
+@media(width <= 596px){
+    .table th{
+        width: 10%;
+        font-size: xx-small;
+    }
+    .table tr{
+        width: 10%;
+        font-size: xx-small;
+    }
+}

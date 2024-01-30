@@ -1,0 +1,27 @@
+@media (width >= 700px) {
+    .div {
+        height: 400px;
+        width: 650px;
+    }
+}
+
+@media (450px <= width < 700px) {
+    .div {
+        height: 246px;
+        width: 430px;
+    }
+}
+
+@media (300px <= width < 450px) {
+    .div {
+        height: 200px;
+        width: 270px;
+    }
+}
+
+@media (width < 300px) {
+    .div {
+        height: 200px;
+        width: 170px;
+    }
+}
