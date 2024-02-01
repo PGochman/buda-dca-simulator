@@ -8,7 +8,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { ReactElement, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import style from "./linechart.module.css"
 import {
@@ -16,6 +16,7 @@ import {
   getMonthsArray,
   getValueByMonth,
 } from "../../utils/functions";
+import { LineChartProps } from "../../utils/types";
 
 ChartJS.register(
   CategoryScale,
@@ -40,7 +41,7 @@ export const options = {
   },
 };
 
-export default function LineChart({ tableData, trades }: ReactElement["props"]) {
+export default function LineChart({ tableData, trades }: LineChartProps) {
   const [labels, setLabels] = useState<string[]>([]);
   const [valueByMonth, setValueByMonth] = useState<number[]>([]);
   const [investByMonth, setInvestByMonth] = useState<number[]>([]);

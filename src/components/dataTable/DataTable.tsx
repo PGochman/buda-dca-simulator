@@ -1,8 +1,7 @@
-import { ReactElement } from "react";
-import { TableData } from "../../utils/types";
+import { DataTableProps, TableData } from "../../utils/types";
 import style from "./datatable.module.css";
 
-export default function DataTable({ tableData }: ReactElement["props"]) {
+export default function DataTable({ tableData }: DataTableProps ) {
 
   return (
     <table className={style.table}>

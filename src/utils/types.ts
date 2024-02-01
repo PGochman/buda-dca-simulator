@@ -30,3 +30,26 @@ export type Info = {
     finalDate: string,
     amount: number
 }
+
+export type DataTableProps = {
+    tableData : TableData[]
+}
+
+export type InvestmentProfitProps = {
+    investedAmount: number | undefined,
+    portfolioValue: number | undefined, 
+    percentage: number | undefined, 
+    profit: number | undefined
+}
+
+export type LineChartProps = {
+    trades: Entry[],
+    tableData: TableData[]
+}
+
+export type DateInputType = {
+    initialDate: string,
+    finalDate: string,
+    price: number,
+    handleInfoChange: (info: Info) => void
+}
