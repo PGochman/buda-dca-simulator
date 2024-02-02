@@ -54,7 +54,7 @@ export const getTradeInfo = async (date: number) => {
   try {
     const { trades }: TradeResponse = (
       await axios(
-        `http://localhost:8010/proxy/api/v2/markets/btc-clp/trades?timestamp=${date}&limit=1`
+        `https://www.buda.com/api/v2/markets/btc-clp/trades?timestamp=${date}&limit=1`
       )
     ).data;
     let [timestamp, amount, price] = trades.entries[0];
