@@ -29,7 +29,7 @@ describe("Data Table", () => {
     })
 })
 
-describe("Investment profit", () => {
+describe("Investment profit Loss", () => {
     beforeEach(() => {
         render(
             <InvestmentProfit 
@@ -48,12 +48,28 @@ describe("Investment profit", () => {
         })
     })
 
-    // test("show table values correctly", () =>{
-    //     const values = [dataLoss.at(-1)?.investedAmount, dataLoss.at(-1)?.percentageChange, dataLoss.at(-1)?.portfolioValue, dataLoss.at(-1)?.valueChange]
-    //     console.log(values)
-    //     values.forEach((value) => {
-    //         const regexp = new RegExp(`\\b${value}\\b`)
-    //         expect(screen.getAllByText(regexp)).toBeDefined()
-    //     })
-    // })
+    test("show table values correctly", () =>{
+        const values = [dataLoss.at(-1)?.investedAmount, dataLoss.at(-1)?.percentageChange, dataLoss.at(-1)?.portfolioValue, dataLoss.at(-1)?.valueChange]
+        values.forEach((value) => {
+            if(String(value).startsWith("-")){
+                const val = String(value).split("")
+                val.shift()
+                const regexp1 = new RegExp(`\\b-?${val.join("")}\\b`)
+                expect(screen.getAllByText(regexp1)).toBeDefined()
+            } else {
+                const regexp = new RegExp(`\\b${value}\\b`)
+                expect(screen.getAllByText(regexp)).toBeDefined()
+            }
+        })
+    })
+
+    test("not show gain values", () => {
+        const gainRegexp = new RegExp(`\\bGain\\b`)
+        const growRegexp = new RegExp(`\\bGrowth\\b`)
+        const plusRegexp = /\+/
+
+        expect(screen.queryByText(gainRegexp)).toBeNull()
+        expect(screen.queryByText(growRegexp)).toBeNull()
+        expect(screen.queryByText(plusRegexp)).toBeNull()
+    })
 })
